@@ -57,3 +57,4 @@ if __name__ == "__main__":
 
                 time.sleep(2) # Detik
         time.sleep(3600) # Sett Durasi Per Jam
+        continue
