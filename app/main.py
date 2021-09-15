@@ -18,7 +18,7 @@ def notifyMe(title, message):
     notification.notify(
         title = title,
         message = message,
-        app_icon = r"app/sulteng.ico",
+        app_icon = r"sulteng.ico",
         timeout = 10
     )
 
