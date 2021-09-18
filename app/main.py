@@ -18,7 +18,7 @@ def notifyMe(title, message):
     notification.notify(
         title = title,
         message = message,
-        app_icon = r"sulteng.ico",
+        app_icon = "app/sulteng.ico",
         timeout = 10
     )
 
@@ -30,8 +30,8 @@ def getData(url):
 
 if __name__ == "__main__":
     while True:
-        # notifyMe("Halo Satgas Sulteng !", "Mari kita hentikan penyebaran virus ini bersama-sama !\n\nDev : Sulistiawan | Kominfo Sulteng\nSource : Kawalcorona.com")
-        notifyMe("Halo Satgas Sulteng !", "Update C-19 / Jam\n\nDev : Sulistiawan | Kominfo Sulteng\nSource : Kawalcorona.com")
+        notifyMe("Halo Satgas Sulteng !", "Mari kita hentikan penyebaran virus ini bersama !\n\nDev : Sulistiawan | Kominfo Sulteng")
+        # notifyMe("Halo Satgas Sulteng !", "Update C-19 / Jam\n\nDev : Sulistiawan | Kominfo Sulteng\nSource : Kawalcorona.com")
 
         sumberData = getData('https://kawalcorona.com/')
         soup = BeautifulSoup(sumberData, 'html.parser')
@@ -52,7 +52,7 @@ if __name__ == "__main__":
             data = item.split('\n')
             if data[1] in lokasi:           
                 nJudul = f'Kasus Covid-19 di {data[1]}'         
-                nTeks = f"Positif\t:\t{data[2]}\nSembuh\t:\t{data[3]}\nWafat\t:\t{data[4]}"
+                nTeks = f"Positif\t:\t{data[2]}\nSembuh\t:\t{data[3]}\nWafat\t:\t{data[4]}\nSource : Kawalcorona.com"
                 notifyMe(nJudul, nTeks)
 
                 time.sleep(2) # Detik
